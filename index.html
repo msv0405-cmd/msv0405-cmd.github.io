@@ -1,47 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <title>Anh Vân Portfolio</title>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: Arial;
-      margin: 40px;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Trang cá nhân - Anh Vân</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            color: #333;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #764ba2;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #764ba2;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px 0;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #764ba2;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #667eea;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Xin chào, tôi là Anh Vân 👋</h1>
-<p>Economics Student | Data Analysis | Web Development</p>
+<div class="container">
+    <div class="card">
 
-<div class="card">
-  <h2>Projects</h2>
-  <ul>
-    <li>FDI and Economic Growth Analysis</li>
-    <li>Student Expense Management Website</li>
-    <li>Unemployment Data Analysis using Stata</li>
-  </ul>
-</div>
+        <img src="avatar.jpg" alt="Ảnh cá nhân">
 
-<div class="card">
-  <h2>Skills</h2>
-  <p>Python | Stata | HTML | CSS | React</p>
-</div>
+        <h1>Xin chào, mình là Anh Vân 👋</h1>
+        <p>Sinh viên Kinh tế quốc tế</p>
 
-<div class="card">
-  <h2>Contact</h2>
-  <p>Email: k62.2314410008@ftu.edu.vn</p>
+        <h2>🏫 Trường học</h2>
+        <p>Trường Đại học Ngoại thương - cơ sở Hà Nội</p>
+
+        <h2>💡 Sở thích</h2>
+        <ul>
+            <li>📚 Nghiên cứu kinh tế phát triển</li>
+            <li>💻 Phân tích dữ liệu (Stata, Python)</li>
+            <li>🌍 Tài chính kỹ thuật số</li>
+        </ul>
+
+        <h2>📝 Giới thiệu</h2>
+        <p>
+            Mình yêu thích nghiên cứu về tài chính kỹ thuật số, tăng trưởng kinh tế 
+            và các vấn đề phát triển tại các quốc gia đang phát triển.
+        </p>
+
+        <a href="mailto:k62.2314410008@ftu.edu.vn" class="btn">Liên hệ với mình</a>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Anh Vân | GitHub Pages
+    </div>
 </div>
 
 </body>
