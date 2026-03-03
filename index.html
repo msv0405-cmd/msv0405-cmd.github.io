@@ -1,114 +1,179 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Trang cá nhân - Anh Vân</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #667eea, #764ba2);
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Anh Vân</title>
 
-        .container {
-            padding: 40px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-        .card {
-            background: white;
-            color: #333;
-            max-width: 700px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+/* Fade animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
 
-        img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #764ba2;
-        }
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        h1 {
-            margin-bottom: 5px;
-        }
+/* Container */
+.container {
+    padding: 60px 20px;
+}
 
-        h2 {
-            margin-top: 30px;
-            color: #764ba2;
-        }
+.card {
+    background: white;
+    color: #333;
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation-delay: 0.3s;
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+/* Avatar animation */
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #764ba2;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 20px;
+}
 
-        li {
-            padding: 8px 0;
-        }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
 
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
+h1 {
+    margin-bottom: 10px;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #764ba2;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
+h2 {
+    margin-top: 40px;
+    color: #764ba2;
+}
 
-        .btn:hover {
-            background: #667eea;
-        }
-    </style>
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 0;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #764ba2;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #667eea;
+    transform: scale(1.05);
+}
+
+/* Smooth section animation delay */
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <div class="card">
 
-        <img src="avatar.jpg" alt="Ảnh cá nhân">
+<div class="card fade-in">
 
-        <h1>Xin chào, mình là Anh Vân 👋</h1>
-        <p>Sinh viên Kinh tế quốc tế</p>
+<img src="avatar.jpg" class="avatar" alt="Avatar">
 
-        <h2>🏫 Trường học</h2>
-        <p>Trường Đại học Ngoại thương - cơ sở Hà Nội</p>
+<h1>Xin chào, mình là Anh Vân 👋</h1>
+<p>Sinh viên Kinh tế quốc tế</p>
 
-        <h2>💡 Sở thích</h2>
-        <ul>
-            <li>📚 Nghiên cứu kinh tế phát triển</li>
-            <li>💻 Phân tích dữ liệu (Stata, Python)</li>
-            <li>🌍 Tài chính kỹ thuật số</li>
-        </ul>
-
-        <h2>📝 Giới thiệu</h2>
-        <p>
-            Mình yêu thích nghiên cứu về tài chính kỹ thuật số, tăng trưởng kinh tế 
-            và các vấn đề phát triển tại các quốc gia đang phát triển.
-        </p>
-
-        <a href="mailto:k62.2314410008@ftu.edu.vn" class="btn">Liên hệ với mình</a>
-
-    </div>
-
-    <div class="footer">
-        © 2026 Anh Vân | GitHub Pages
-    </div>
+<div class="section">
+<h2>🏫 Trường học</h2>
+<p>TrườngĐại học Ngoại thương - cơ sở Hà Nội</p>
 </div>
+
+<div class="section">
+<h2>💡 Sở thích</h2>
+<ul>
+<li>📊 Phân tích dữ liệu (Stata, Python)</li>
+<li>🌍 Kinh tế phát triển</li>
+<li>💰 Tài chính kỹ thuật số</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>📝 Giới thiệu</h2>
+<p>
+Mình yêu thích nghiên cứu về tăng trưởng kinh tế, FDI, 
+và các vấn đề phát triển tại các quốc gia đang phát triển.
+</p>
+</div>
+
+<a href="mailto:k62.2314410008@ftu.edu.vn" class="btn">Liên hệ với mình</a>
+
+</div>
+
+<div class="footer">
+© 2026 Anh Vân | GitHub Pages
+</div>
+
+</div>
+
+<script>
+/* Scroll animation */
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
