@@ -26,7 +26,25 @@ color:white;
 overflow-x:hidden;
 line-height:1.6;
 }
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
 
+.navbar a{
+color:white;
+text-decoration:none;
+letter-spacing:2px;
+}
 /* HERO */
 
 .hero{
@@ -275,7 +293,15 @@ font-size:40px;
 
 <body>
 
+<nav class="navbar">
 
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#dance">Dance</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+</nav>
 
 <!-- HERO -->
 
@@ -294,7 +320,7 @@ font-size:40px;
 
 <!-- ABOUT -->
 
-<section class="about">
+<section id="about" class="about">
 
 <img src="avatar.jpg" class="avatar">
 
@@ -324,7 +350,7 @@ Ngoài việc học và nghiên cứu, mình có niềm đam mê lớn với ngh
 
 <!-- STORY -->
 
-<section class="story">
+<section id="dance" class="story">
 
 <h2>My Dance Journey</h2>
 
@@ -362,7 +388,7 @@ style="max-width:605px;min-width:325px;margin:auto;">
 
 <!-- GALLERY -->
 
-<section class="gallery">
+<section id="gallery" class="gallery">
 
 <h2>Dance Moments</h2>
 
@@ -395,7 +421,7 @@ style="max-width:605px;min-width:325px;margin:auto;">
 
 <!-- CONTACT -->
 
-<section class="contact">
+<section id="contact" class="contact">
 
 <h2>Follow My Dance</h2>
 
