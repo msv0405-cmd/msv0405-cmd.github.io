@@ -1,179 +1,338 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Anh Vân</title>
+
+<title>Anh Vân | Dance Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* Fade animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
+body{
+font-family: 'Montserrat', sans-serif;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
 }
 
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("dance1.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
 }
 
-/* Container */
-.container {
-    padding: 60px 20px;
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
 }
 
-.card {
-    background: white;
-    color: #333;
-    max-width: 750px;
-    margin: auto;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    animation-delay: 0.3s;
+.hero-content{
+position:relative;
+z-index:2;
+animation:fadeIn 2s ease;
 }
 
-/* Avatar animation */
-.avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid #764ba2;
-    animation: float 3s ease-in-out infinite;
-    margin-bottom: 20px;
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:80px;
+letter-spacing:8px;
+font-weight:400;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+.hero p{
+margin-top:15px;
+font-size:20px;
+opacity:0.9;
 }
 
-h1 {
-    margin-bottom: 10px;
+/* ABOUT */
+
+.about{
+padding:120px 20px;
+max-width:900px;
+margin:auto;
+text-align:center;
 }
 
-h2 {
-    margin-top: 40px;
-    color: #764ba2;
+.avatar{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:30px;
+border:3px solid white;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.about h2{
+font-family:'Playfair Display', serif;
+font-size:45px;
+margin-bottom:20px;
 }
 
-li {
-    padding: 8px 0;
+.about p{
+font-size:18px;
+opacity:0.85;
+line-height:1.8;
 }
 
-/* Button */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #764ba2;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
+/* GALLERY */
+
+.gallery{
+padding:120px 40px;
 }
 
-.btn:hover {
-    background: #667eea;
-    transform: scale(1.05);
+.gallery h2{
+text-align:center;
+font-family:'Playfair Display', serif;
+font-size:45px;
+margin-bottom:70px;
 }
 
-/* Smooth section animation delay */
-.section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
+/* Masonry Layout */
+
+.masonry{
+column-count:3;
+column-gap:20px;
 }
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
+.masonry img{
+width:100%;
+margin-bottom:20px;
+cursor:pointer;
+transition:0.4s;
+border-radius:6px;
 }
 
-/* Footer */
-.footer {
-    margin-top: 50px;
-    font-size: 14px;
-    opacity: 0.8;
+.masonry img:hover{
+transform:scale(1.03);
+opacity:0.9;
 }
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+/* STORY SECTION */
+
+.story{
+padding:120px 20px;
+background:#111;
+text-align:center;
+}
+
+.story h2{
+font-family:'Playfair Display', serif;
+font-size:45px;
+margin-bottom:30px;
+}
+
+.story p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+opacity:0.85;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:50px;
+font-size:14px;
+opacity:0.6;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.masonry{
+column-count:2;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+}
+
+@media(max-width:600px){
+
+.masonry{
+column-count:1;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
 
-<div class="card fade-in">
+<!-- HERO -->
 
-<img src="avatar.jpg" class="avatar" alt="Avatar">
+<section class="hero">
 
-<h1>Xin chào, mình là Vân Anh 👋</h1>
-<p>Sinh viên Kinh tế quốc tế</p>
+<div class="hero-content">
 
-<div class="section">
-<h2>🏫 Trường học</h2>
-<p>Trường Đại học Ngoại thương - cơ sở Hà Nội</p>
+<h1>ANH VÂN</h1>
+<p>Dance • Expression • Art</p>
+
 </div>
 
-<div class="section">
-<h2>💡 Sở thích</h2>
-<ul>
-<li>📊 Phân tích dữ liệu (Stata, Python)</li>
-<li>🌍 Kinh tế phát triển</li>
-<li>💰 Tài chính kỹ thuật số</li>
-</ul>
-</div>
+</section>
 
-<div class="section">
-<h2>📝 Giới thiệu</h2>
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<img src="avatar.jpg" class="avatar">
+
+<h2>About Me</h2>
+
 <p>
-Mình yêu thích nghiên cứu về tăng trưởng kinh tế, FDI, 
-và các vấn đề phát triển tại các quốc gia đang phát triển.
+Múa là cách mình kể câu chuyện của bản thân thông qua chuyển động.  
+Mỗi bước nhảy mang theo cảm xúc, năng lượng và sự tự do.  
+Đối với mình, sân khấu không chỉ là nơi biểu diễn mà còn là nơi kết nối nghệ thuật và con người.
 </p>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<section class="story">
+
+<h2>My Dance Journey</h2>
+
+<p>
+Từ những buổi tập nhỏ đến những sân khấu lớn hơn, múa đã trở thành
+một phần không thể thiếu trong cuộc sống của mình.
+Mỗi chuyển động là một cách để khám phá bản thân và chia sẻ cảm xúc với khán giả.
+</p>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<h2>Dance Moments</h2>
+
+<div class="masonry">
+
+<img src="dance1.jpg">
+<img src="dance2.jpg">
+<img src="dance3.jpg">
+<img src="dance4.jpg">
+<img src="dance5.jpg">
+<img src="dance6.jpg">
+<img src="dance7.jpg">
+<img src="dance8.jpg">
+
 </div>
 
-<a href="mailto:k62.2314410008@ftu.edu.vn" class="btn">Liên hệ với mình</a>
+</section>
+
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<img id="lightbox-img">
 
 </div>
 
-<div class="footer">
-© 2026 Anh Vân | GitHub Pages
-</div>
 
-</div>
+
+<footer>
+
+© 2026 Anh Vân — Dance Portfolio
+
+</footer>
+
+
 
 <script>
-/* Scroll animation */
-const sections = document.querySelectorAll('.section');
 
-window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add('show');
-        }
-    });
-});
+/* LIGHTBOX */
+
+const images=document.querySelectorAll(".masonry img")
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+
+images.forEach(img=>{
+img.onclick=()=>{
+lightbox.style.display="flex"
+lightboxImg.src=img.src
+}
+})
+
+lightbox.onclick=()=>{
+lightbox.style.display="none"
+}
+
 </script>
 
 </body>
+
 </html>
+```
